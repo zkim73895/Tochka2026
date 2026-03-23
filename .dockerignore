@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.git/
+.idea/
+.venv/
+venv/
+env/
+ENV/
+postgres_data/
+docker-alembic/
+
