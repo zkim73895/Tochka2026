@@ -7,7 +7,7 @@ from exchange_kernel.foundation.config import load_config
 
 config = load_config()
 engine = create_async_engine(
-    config.sqlalchemy_url,
+    config.database_dsn,
     echo=False,
     pool_size=10,
     max_overflow=15,
@@ -15,10 +15,9 @@ engine = create_async_engine(
     pool_pre_ping=True,
     pool_timeout=30,
 )
-session_factory = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+session_hub = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
 
 async def provide_session() -> AsyncIterator[AsyncSession]:
-    async with session_factory() as session:
+    async with session_hub() as session:
         yield session
-

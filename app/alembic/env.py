@@ -11,7 +11,7 @@ load_dotenv(".env")
 
 config = context.config
 runtime = load_config()
-config.set_main_option("sqlalchemy.url", runtime.sqlalchemy_url.replace("%", "%%"))
+config.set_main_option("sqlalchemy.url", runtime.database_dsn.replace("%", "%%"))
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)

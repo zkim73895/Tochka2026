@@ -18,7 +18,7 @@ class RuntimeConfig:
     quote_ticker: str
 
     @property
-    def sqlalchemy_url(self) -> str:
+    def database_dsn(self) -> str:
         return (
             "postgresql+asyncpg://"
             f"{self.pg_user}:{self.pg_password}"
@@ -40,4 +40,3 @@ def load_config() -> RuntimeConfig:
         token_ttl_minutes=int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "0")),
         quote_ticker=os.getenv("BASE_INSTRUMENT_TICKER", "RUB"),
     )
-
