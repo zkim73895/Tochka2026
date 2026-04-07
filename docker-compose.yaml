@@ -10,12 +10,12 @@ services:
         condition: service_healthy
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "12345678"
+      POSTGRES_PASSWORD: "kN7pQ4xR9mL2vT6s"
       ACCESS_TOKEN_EXPIRE_MINUTES: 999999
       POSTGRES_HOST: postgres
       POSTGRES_PORT: "5432"
       POSTGRES_DB: "tochka_db"
-      SECRET_KEY: "ultra-secret-key"
+      SECRET_KEY: "3xF9nL2qR7vK1mT8sD4pW6yH"
       JWT_ALGORITHM: "HS256"
       BASE_INSTRUMENT_TICKER: "RUB"
 
@@ -27,11 +27,11 @@ services:
         condition: service_healthy
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "12345678"
+      POSTGRES_PASSWORD: "kN7pQ4xR9mL2vT6s"
       POSTGRES_HOST: postgres
       POSTGRES_PORT: "5432"
       POSTGRES_DB: "tochka_db"
-      SECRET_KEY: "ultra-secret-key"
+      SECRET_KEY: "3xF9nL2qR7vK1mT8sD4pW6yH"
       JWT_ALGORITHM: "HS256"
       ACCESS_TOKEN_EXPIRE_MINUTES: 999999
       BASE_INSTRUMENT_TICKER: "RUB"
@@ -43,7 +43,7 @@ services:
     container_name: postgres_db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 12345678
+      POSTGRES_PASSWORD: kN7pQ4xR9mL2vT6s
       POSTGRES_DB: tochka_db
     expose:
       - 5432
